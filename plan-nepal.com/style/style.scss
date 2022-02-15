@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Roboto&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+@import "colors";
+
+
+
+// header start
+
+header {
+    &.sticky {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+
+        animation: smoothScroll 1s forwards;
+    }
+
+    @keyframes smoothScroll {
+        0% {
+            transform: translateY(-40px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    .top-header {
+        background-color: $light-green;
+
+        a {
+            color: $white;
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .icon-container {
+            a {
+                margin: 0 10px;
+
+                i {
+                    position: relative;
+                    background-color: $white;
+                    color: $light-green;
+                    border-radius: 100%;
+                    padding: 5px;
+                    width: 20px;
+                    height: 20px;
+                    display: inline-block;
+                    align-self: center;
+
+                    &::before {
+                        line-height: 20px;
+                        position: absolute;
+                        top: 0px;
+                        left: 3px;
+                    }
+                }
+            }
+        }
+
+        a:hover {
+            color: $orange;
+        }
+
+
+    }
+
+    .bottom-header {
+        background-color: $dark-green;
+
+        .logo-container {
+
+            a {
+                position: absolute;
+                z-index: 2;
+                top: -3px;
+                border: 3px solid $dark-orange;
+            }
+        }
+
+        .nav-link {
+            padding: 25px 18px !important;
+            color: $white !important;
+
+        }
+
+
+        a:hover {
+            background-color: $orange;
+            color: $white;
+
+        }
+
+        .dropdown-menu {
+            background-color: $light-grey;
+
+            a {
+
+                padding: 15px 15px;
+                color: #333333 !important;
+            }
+        }
+    }
+}
+
+// header end
+
+
+// banner slider section start
+.banner {
+    .carousel-inner {
+        &>div {
+            min-height: 540px;
+        }
+
+        .outer-content {
+            display: flex;
+            height: 540px;
+            align-items: center;
+        }
+
+        .content {
+            width: 100%;
+            padding: 40px 200px;
+
+            button {
+                background: $orange;
+                color: white;
+                border: 0;
+                padding: 10px 20px;
+            }
+        }
+
+        .bg-slider {
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .bg-slider1 {
+            @extend .bg-slider;
+            background-image: url(../images/slidder-img1.jpg);
+        }
+
+        .bg-slider2 {
+            @extend .bg-slider;
+            background-image: url(../images/slidder-img2.jpg);
+        }
+
+        .bg-slider3 {
+            @extend .bg-slider;
+            background-image: url(../images/slidder-img3.jpg);
+        }
+
+        .bg-slider4 {
+            @extend .bg-slider;
+            background-image: url(../images/slidder-img4.jpg);
+        }
+
+        .bg-slider5 {
+            @extend .bg-slider;
+            background-image: url(../images/slidder-img5.jpg);
+        }
+
+        .bg-slider6 {
+            @extend .bg-slider;
+            background-image: url(../images/slidder-img6.jpg);
+        }
+    }
+
+    position: relative;
+
+    .toolbar {
+        position: absolute;
+        width: 100%;
+        bottom: 30px;
+
+        form {
+            .title {
+                background: $dark-green;
+                color: white;
+                text-transform: uppercase;
+                line-height: 32.6px;
+            }
+
+            background: $light-grey;
+
+            .col-md-2 {
+                padding: 20px 10px;
+                text-align: center;
+
+                select,
+                button {
+                    width: 100%;
+                    padding: 5px;
+                    background: white;
+                    border: 1px solid black;
+                }
+
+                button {
+                    background: $dark-orange;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+// banner slider section end
+
+
+//section Features package start
+.p-featured {
+    ul {
+        li {
+            list-style: none;
+            position: relative;
+            padding: 3px 30px;
+
+            &:before {
+                position: absolute;
+                left: 0px;
+                content: '\f178';
+                font-family: 'FontAwesome';
+            }
+
+            a {
+                text-decoration: none;
+                color: $dark;
+            }
+        }
+    }
+
+}
+
+.view-more {
+    background: $dark-orange;
+    color: $white;
+    padding: 10px 25px;
+    float: right;
+    text-decoration: none;
+
+    &:hover {
+        background: $dark-green;
+        color: $white;
+    }
+}
+
+.our-specialist {
+    .col-md-4 {
+        position: relative;
+        overflow: hidden;
+
+        img {
+
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2), 0 3px 5px 0 rgba(0, 0, 0, .19);
+
+            &:hover {
+                transform: scale(1.2);
+                transition: transform 2s;
+            }
+        }
+
+        .overlay {
+            background: $dark-orange;
+            color: $white;
+            text-transform: uppercase;
+            padding: 10px 40px;
+            position: absolute;
+            display: inline-block;
+            left: 12px;
+            bottom: 25px;
+
+            &:hover {
+                background: $dark-green;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.Best-selling-trips {
+    .tabs {
+        .nav-tabs {
+            .active {
+                background-color: $dark-orange;
+                color: $white;
+            }
+
+            background-color: $dark-green;
+
+            .nav-link {
+                color: $white;
+
+                &:hover {
+                    background-color: $dark-orange;
+                }
+            }
+        }
+    }
+}
+
+.nepal-family-tour {
+    position: relative;
+
+    &:hover {
+        img {
+            opacity: 0.7;
+        }
+    }
+
+    .btn-overlay {
+        position: absolute;
+        bottom: 0px;
+        left: 24px;
+        color: $white;
+        width: calc(100% - 24px);
+
+        .family-tour {
+            background-color: rgba($dark-green, 0.7);
+            padding: 10px 20px;
+            width: 70%;
+        }
+
+        .days {
+            background-color: rgba($dark-orange, 0.7);
+            padding: 10px 20px;
+            width: 30%;
+
+        }
+    }
+}
+
+footer {
+    .footer-top {
+        background-color: $bg-footer;
+        color: $white;
+
+        h4 {
+            text-transform: uppercase;
+        }
+
+        li {
+            line-height: 30px;
+        }
+
+        & a {
+            color: $white;
+            text-decoration: none;
+        }
+
+        & a:hover {
+            color: $dark-orange;
+            transition: 0.23s;
+            transform: translate(10px, 0);
+            display: inline-block;
+            
+        }
+
+        & li {
+            list-style: none;
+        }
+
+        button {
+            background-color: $dark-orange;
+            color: $white;
+            text-transform: uppercase;
+            border: none;
+            padding: 10px;
+        }
+    }
+
+    .footer-bottom {
+        background-color: $dark-green;
+        padding: 15px 0px;
+    }
+
+}
+
+@media only screen and (max-width: 780px) {
+    header {
+       
+        .bottom-header {
+            .nav-link{
+                padding: 10px 5px !important;
+            }
+            .logo-container {
+                img {
+                    width: 80px;
+                }
+            }
+        }
+    }
+
+    section.banner {
+        .carousel-inner {
+            .outer-content {
+                display: block;
+                .content {
+                    padding: 20px;
+                }
+            }
+        }
+
+        .toolbar {
+            padding: 0 60px;
+
+            .col-md-2 {
+                padding: 3px 10px;
+            }
+        }
+    }
+}
